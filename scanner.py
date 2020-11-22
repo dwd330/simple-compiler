@@ -70,7 +70,7 @@ def tokenizer(input_expression):
     
                 char = input_expression[current]
             tokens.append({
-                'type': 'name',
+                'type': 'text',
                 'value': value
             })
             continue
@@ -78,4 +78,8 @@ def tokenizer(input_expression):
         raise ValueError('what are THOSE?: ' + char);
     return tokens
 
-print(tokenizer("A4b5 () "))
+while(True):   
+    i=input('input (q to quit): ')
+    print(tokenizer(i) ,'\n')
+    if(i=='q'):
+        break
